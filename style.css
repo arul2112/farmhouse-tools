@@ -286,6 +286,7 @@ tfoot .grand td:last-child { color: var(--accent); font-size: 17px; }
   tfoot .grand {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    background: var(--accent-soft);
   }
   tfoot .grand td {
     display: flex;
