@@ -53,7 +53,7 @@ function buildRow(p) {
     chip.textContent = n;
     chip.dataset.n = n;
     chip.setAttribute('aria-pressed', n === 0 ? 'true' : 'false');
-    chip.addEventListener('click', () => select(p.id, n));
+    chip.addEventListener('click', () => select_(p.id, n));
     chips.appendChild(chip);
   }
   selCell.appendChild(chips);
@@ -75,6 +75,19 @@ function buildRow(p) {
   row.append(...parser.rows[0].cells);
   body.appendChild(row);
 
+  // mobile picker — same choices as the chips, shown instead of them on small screens
+  const select = document.createElement('select');
+  select.className = 'nos-select';
+  select.setAttribute('aria-label', `Number of ${p.name} bags`);
+  for (let n = 0; n <= max; n++) {
+    const opt = document.createElement('option');
+    opt.value = n;
+    opt.textContent = n;
+    select.appendChild(opt);
+  }
+  select.addEventListener('change', () => select_(p.id, Number(select.value)));
+  row.querySelector('.nos-cell').appendChild(select);
+
   const rateInput = row.querySelector('.rate-input');
   rateInput.addEventListener('input', () => {
     const value = Math.max(0, Number(rateInput.value) || 0);
@@ -86,7 +99,7 @@ function buildRow(p) {
   return body;
 }
 
-function select(id, n) {
+function select_(id, n) {
   counts[id] = n;
   render();
 }
@@ -113,6 +126,7 @@ function render() {
     body.querySelector('[data-cell="sgst"]').textContent = money(sgst);
     body.querySelector('[data-cell="total"]').textContent = money(total);
 
+    body.querySelector('.nos-select').value = n;
     body.querySelectorAll('.chip').forEach(chip => {
       chip.setAttribute('aria-pressed', Number(chip.dataset.n) === n ? 'true' : 'false');
     });
