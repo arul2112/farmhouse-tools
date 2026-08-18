@@ -236,10 +236,10 @@ tfoot .grand td:last-child { color: var(--accent); font-size: 17px; }
   }
 
   /* the chip strip is replaced by a native dropdown on small screens */
-  .selector { display: none; }
+  .figures td.selector { display: none; }
 
-  .nos-value { display: none; }
-  .nos-select {
+  .nos-cell .nos-value { display: none; }
+  .nos-cell .nos-select {
     display: block;
     width: 100%;
     max-width: 130px;
@@ -260,26 +260,28 @@ tfoot .grand td:last-child { color: var(--accent); font-size: 17px; }
     -webkit-appearance: none;
     appearance: none;
   }
-  .nos-cell { align-items: center; }
+  .figures td.nos-cell { align-items: center; }
 
-  .item {
+  .figures td.item {
     grid-column: 1 / -1;
     order: -1;
     font-size: 17px;
     background: none;
   }
-  .item::before { display: none; }
+  .figures td.item::before { display: none; }
 
-  .rate-cell, .nos-cell { grid-column: span 1; }
-  .rate-input { width: 90px; }
+  .figures td.rate-cell, .figures td.nos-cell { grid-column: span 1; }
+  .figures td.rate-cell { gap: 4px; }
+  .rate-cell .rupee { margin-left: auto; font-size: 15px; }
+  .rate-input { width: 110px; padding: 9px 10px; font-size: 16px; }
 
-  .row-total {
+  .figures td.row-total {
     grid-column: 1 / -1;
     font-weight: 700;
     font-size: 16px;
     border-bottom: none;
   }
-  .row-total::before { font-size: 12px; }
+  .figures td.row-total::before { font-size: 12px; }
 
   tfoot .grand {
     display: grid;
