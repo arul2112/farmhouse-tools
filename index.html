@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Murugan Farmhouse — Billing</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="head">
+      <h1>Murugan Farmhouse</h1>
+      <p class="sub">Tap the number of bags — rate, GST and total are calculated automatically.</p>
+    </header>
+
+    <section class="card">
+      <div class="table-scroll">
+        <table id="bill">
+          <thead>
+            <tr>
+              <th class="c sel-head">Select Nos</th>
+              <th class="l">Item</th>
+              <th class="r">Rate</th>
+              <th class="c">Nos</th>
+              <th class="r">Amount</th>
+              <th class="r">CGST 2.5%</th>
+              <th class="r">SGST 2.5%</th>
+              <th class="r">Total</th>
+            </tr>
+          </thead>
+          <!-- one <tbody> per product, built by app.js -->
+          <tfoot>
+            <tr class="grand">
+              <td class="l" colspan="4">Grand Total</td>
+              <td class="r" data-label="Amount" id="gAmount">₹0.00</td>
+              <td class="r" data-label="CGST 2.5%" id="gCgst">₹0.00</td>
+              <td class="r" data-label="SGST 2.5%" id="gSgst">₹0.00</td>
+              <td class="r" data-label="Total" id="gTotal">₹0.00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="actions">
+        <span class="count" id="counters" title="Double-click to reset the count">Next: 0</span>
+        <button type="button" id="refresh" class="btn">↻ Refresh</button>
+        <button type="button" id="reset" class="btn">Clear</button>
+        <button type="button" id="print" class="btn ghost">Print / Save PDF</button>
+        <button type="button" id="next" class="btn primary">Next →</button>
+      </div>
+    </section>
+
+    <p class="note">GST is charged at 5% (CGST 2.5% + SGST 2.5%) on the amount. Each tax is rounded to the nearest paisa.</p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
