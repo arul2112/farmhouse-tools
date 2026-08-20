@@ -4,10 +4,22 @@ Quick GST billing sheet for Murugan Farmhouse.
 
 **Live:** https://arul2112.github.io/farmhouse-tools/
 
-- Three items — DAP, IFFCO, Nano Urea — each with a tap-to-pick number strip (DAP 0–20, others 0–16).
-- Amount, CGST 2.5%, SGST 2.5% and Total per row, plus a grand total across all three.
-- Rates are editable and remembered in the browser; Refresh and Next keep them.
-- `Next →` counts each completed bill and starts a fresh one.
-- Works on phone and desktop; prints to a clean bill.
+Made for a phone: tap **+ Add item**, choose the item, tap the number — the line
+is added. Repeat for as many items as the bill needs.
 
-Rates and per-item limits live at the top of `app.js`.
+| Item | Rate | Unit |
+| --- | --- | --- |
+| RFCL Urea (NFL) | ₹237 | 45 kg |
+| IFFCO Urea | ₹258 | 45 kg |
+| DAP | ₹1298 | 50 kg |
+| Factamfas | ₹1906 | 50 kg |
+| IFFCO Nano Urea | ₹205 | ½ litre |
+
+- GST 5% (CGST 2.5% + SGST 2.5%) is added on the amount.
+- The screen shows only the final total; **Print** gives the full bill with the
+  amount, CGST and SGST breakdown.
+- A rate can be changed on the number screen and is remembered in the browser.
+- Tap a line to change its number, **✕** to remove it.
+- **Next bill →** counts the finished bill and starts an empty one.
+
+Rates live at the top of `app.js`.
