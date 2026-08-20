@@ -22,7 +22,8 @@ Two pages:
 | IFFCO Nano Urea | ₹205 | ½ litre |
 
 - GST 5% (CGST 2.5% + SGST 2.5%) is added on the amount.
-- Every item keeps its own colour band on the bill.
+- Plain white sheet, ruled like the paper bill. #007fff on the buttons;
+  the only other colour is each item's own band on its row.
 - Tap the **Nos** button on a row to change it, **✕** to remove the row.
 - **Next bill →** counts the finished bill and starts an empty one.
 - **Print** gives a clean bill without the buttons.
