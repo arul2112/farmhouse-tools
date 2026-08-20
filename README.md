@@ -16,8 +16,7 @@ is added. Repeat for as many items as the bill needs.
 | IFFCO Nano Urea | ₹205 | ½ litre |
 
 - GST 5% (CGST 2.5% + SGST 2.5%) is added on the amount.
-- The screen shows only the final total; **Print** gives the full bill with the
-  amount, CGST and SGST breakdown.
+- Every line shows its amount, CGST and SGST, and so does the grand total.
 - A rate can be changed on the number screen and is remembered in the browser.
 - Tap a line to change its number, **✕** to remove it.
 - **Next bill →** counts the finished bill and starts an empty one.

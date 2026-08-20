@@ -133,11 +133,17 @@ function render() {
     li.className = 'line';
     li.innerHTML = `
       <button type="button" class="line-main">
-        <span class="name">${p.name} <small>${p.unit}</small></span>
+        <span class="top">
+          <span class="name">${p.name} <small>${p.unit}</small></span>
+          <span class="line-total">${money(total)}</span>
+        </span>
         <span class="calc">${line.nos} × ${money(rates[line.id])}</span>
-        <span class="tax">GST ${money(round2(cgst + sgst))}</span>
+        <span class="figures">
+          <span><i>Amount</i>${money(amount)}</span>
+          <span><i>CGST 2.5%</i>${money(cgst)}</span>
+          <span><i>SGST 2.5%</i>${money(sgst)}</span>
+        </span>
       </button>
-      <span class="line-total">${money(total)}</span>
       <button type="button" class="x" aria-label="Remove ${p.name}">✕</button>`;
     li.querySelector('.line-main').addEventListener('click', () => {
       openPicker();

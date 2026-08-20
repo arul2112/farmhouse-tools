@@ -38,20 +38,20 @@ body {
 .lines { margin: 0; padding: 0; list-style: none; }
 
 .line {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
   gap: 8px;
-  padding: 10px 10px 10px 14px;
+  padding: 10px 10px 12px 14px;
   border-bottom: 1px solid var(--line);
 }
 
 .line-main {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 2px;
   min-width: 0;
-  padding: 4px 0;
+  padding: 2px 0;
   font: inherit;
   text-align: left;
   color: inherit;
@@ -59,10 +59,34 @@ body {
   border: 0;
   cursor: pointer;
 }
+.line-main .top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
 .name { font-weight: 600; font-size: 17px; }
 .name small { color: var(--muted); font-weight: 400; font-size: 13px; white-space: nowrap; }
 .calc { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
-.tax { display: none; }          /* printed bill only */
+
+/* amount / CGST / SGST, under every line */
+.figures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px 10px;
+  margin-top: 6px;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.figures > span { display: flex; flex-direction: column; }
+.figures i {
+  color: var(--muted);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 
 .line-total {
   font-weight: 700;
@@ -211,7 +235,7 @@ body {
 
 .totals { padding: 12px 14px; background: var(--accent-soft); }
 .trow {
-  display: none;             /* the split-up figures are for the printed bill */
+  display: flex;
   justify-content: space-between;
   gap: 10px;
   padding: 4px 0;
@@ -219,8 +243,10 @@ body {
   font-variant-numeric: tabular-nums;
 }
 .trow.grand {
-  display: flex;
   align-items: baseline;
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid #cfe0cf;
   font-size: 18px;
   font-weight: 700;
 }
@@ -265,9 +291,7 @@ body {
   .sub, .note, .add, .picker, .actions, .x, .empty { display: none; }
   .card { border: none; border-radius: 0; }
   .line { padding: 8px 0; }
-  .line-main { flex-direction: row; align-items: baseline; gap: 12px; }
   .name { flex: 1; }
-  .tax { display: inline; color: #555; }
   .totals { background: none; border-top: 2px solid #000; }
-  .trow { display: flex; color: #000; }
+  .trow { color: #000; }
 }
