@@ -4,10 +4,16 @@ Quick GST billing sheet for Murugan Farmhouse.
 
 **Live:** https://arul2112.github.io/farmhouse-tools/
 
-Made for a phone: tap **+ Add item**, choose the item, tap the number — the line
-is added. Repeat for as many items as the bill needs.
+Two pages:
 
-| Item | Rate | Unit |
+- `index.html` — the bill. Tap **+ Add item**, choose the item, tap the number.
+  The row is added to a proper bill table: name, weight, nos, rate, amount,
+  CGST 2.5%, SGST 2.5%, total. On a phone the table slides sideways. Only the
+  grand total sits at the bottom right.
+- `items.html` — the rates. The only place a rate can be changed; the bill uses
+  whatever is saved here. **Standard rates** puts them all back.
+
+| Item | Rate | Weight |
 | --- | --- | --- |
 | RFCL Urea (NFL) | ₹237 | 45 kg |
 | IFFCO Urea | ₹258 | 45 kg |
@@ -16,9 +22,9 @@ is added. Repeat for as many items as the bill needs.
 | IFFCO Nano Urea | ₹205 | ½ litre |
 
 - GST 5% (CGST 2.5% + SGST 2.5%) is added on the amount.
-- Every line shows its amount, CGST and SGST, and so does the grand total.
-- A rate can be changed on the number screen and is remembered in the browser.
-- Tap a line to change its number, **✕** to remove it.
+- Every item keeps its own colour band on the bill.
+- Tap the **Nos** button on a row to change it, **✕** to remove the row.
 - **Next bill →** counts the finished bill and starts an empty one.
+- **Print** gives a clean bill without the buttons.
 
-Rates live at the top of `app.js`.
+Items, rates and colours live at the top of `items.js`.

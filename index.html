@@ -4,18 +4,43 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Murugan Farmhouse — Billing</title>
-<link rel="stylesheet" href="style.css?v=7" />
+<link rel="stylesheet" href="style.css?v=9" />
 </head>
 <body>
   <main class="wrap">
     <header class="head">
       <h1>Murugan Farmhouse</h1>
-      <p class="sub">Tap <b>+ Add item</b>, choose the item, then the number of bags.</p>
+      <p class="sub">Tap <b>+ Add item</b>, choose the item, then the number.
+        <a href="items.html">Rates ›</a></p>
     </header>
 
     <section class="card">
-      <ul class="lines" id="lines"></ul>
-      <p class="empty" id="empty">No items yet.</p>
+      <div class="table-scroll">
+        <table class="bill">
+          <thead>
+            <tr>
+              <th class="l">Name</th>
+              <th class="l">Weight</th>
+              <th class="c">Nos</th>
+              <th class="r">Rate</th>
+              <th class="r">Amount</th>
+              <th class="r">CGST 2.5%</th>
+              <th class="r">SGST 2.5%</th>
+              <th class="r">Total</th>
+              <th class="cut"></th>
+            </tr>
+          </thead>
+          <tbody id="lines"></tbody>
+          <tfoot>
+            <tr class="grand">
+              <td class="l" colspan="7">Grand Total</td>
+              <td class="r" id="gTotal">₹0.00</td>
+              <td class="cut"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="empty" id="empty">No items yet — tap <b>+ Add item</b>.</p>
 
       <button type="button" class="add" id="add">+ Add item</button>
 
@@ -27,19 +52,7 @@
           <button type="button" class="close" id="close" aria-label="Close">✕</button>
         </div>
         <div class="items" id="items"></div>
-        <div class="nos-step" id="nosStep" hidden>
-          <div class="nos-grid" id="nosGrid"></div>
-          <label class="rate-edit">Rate ₹
-            <input type="number" id="rateInput" min="0" step="0.01" inputmode="decimal">
-          </label>
-        </div>
-      </div>
-
-      <div class="totals">
-        <div class="trow"><span>Amount</span><b id="gAmount">₹0.00</b></div>
-        <div class="trow"><span>CGST 2.5%</span><b id="gCgst">₹0.00</b></div>
-        <div class="trow"><span>SGST 2.5%</span><b id="gSgst">₹0.00</b></div>
-        <div class="trow grand"><span>Total</span><b id="gTotal">₹0.00</b></div>
+        <div class="nos-grid" id="nosGrid" hidden></div>
       </div>
 
       <div class="actions">
@@ -50,9 +63,11 @@
       </div>
     </section>
 
-    <p class="note">GST 5% (CGST 2.5% + SGST 2.5%) is added on the amount.</p>
+    <p class="note">GST 5% (CGST 2.5% + SGST 2.5%) is added on the amount.
+      Slide the bill sideways to see every column.</p>
   </main>
 
-  <script src="app.js?v=7"></script>
+  <script src="items.js?v=9"></script>
+  <script src="app.js?v=9"></script>
 </body>
 </html>
