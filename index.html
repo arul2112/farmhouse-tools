@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Murugan Farmhouse — Billing</title>
-<link rel="stylesheet" href="style.css?v=12" />
+<link rel="stylesheet" href="style.css?v=14" />
 </head>
 <body>
   <main class="wrap">
@@ -45,15 +45,17 @@
 
       <button type="button" class="add" id="add">+ Add item</button>
 
-      <!-- step 1: pick the item, step 2: pick the number -->
+      <!-- popup: step 1 pick the item, step 2 pick the number -->
       <div class="picker" id="picker" hidden>
-        <div class="picker-head">
-          <button type="button" class="back" id="back" hidden>‹ Back</button>
-          <span id="pickerTitle">Choose the item</span>
-          <button type="button" class="close" id="close" aria-label="Close">✕</button>
+        <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="pickerTitle">
+          <div class="picker-head">
+            <button type="button" class="back" id="back" hidden>‹ Back</button>
+            <span id="pickerTitle">Choose the item</span>
+            <button type="button" class="close" id="close" aria-label="Close">✕</button>
+          </div>
+          <div class="items" id="items"></div>
+          <div class="nos-grid" id="nosGrid" hidden></div>
         </div>
-        <div class="items" id="items"></div>
-        <div class="nos-grid" id="nosGrid" hidden></div>
       </div>
 
       <div class="actions">
@@ -68,7 +70,7 @@
       Slide the bill sideways to see every column.</p>
   </main>
 
-  <script src="items.js?v=12"></script>
-  <script src="app.js?v=12"></script>
+  <script src="items.js?v=14"></script>
+  <script src="app.js?v=14"></script>
 </body>
 </html>

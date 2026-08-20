@@ -32,13 +32,13 @@ for (let n = 1; n <= MAX_NOS; n++) {
 
 function openPicker() {
   picker.hidden = false;
-  addBtn.hidden = true;
+  document.body.classList.add('locked');
   showItems();
 }
 
 function closePicker() {
   picker.hidden = true;
-  addBtn.hidden = false;
+  document.body.classList.remove('locked');
   picking = null;
 }
 
@@ -122,6 +122,8 @@ function render() {
 
 addBtn.addEventListener('click', openPicker);
 $('close').addEventListener('click', closePicker);
+picker.addEventListener('click', e => { if (e.target === picker) closePicker(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePicker(); });
 backBtn.addEventListener('click', showItems);
 
 $('clear').addEventListener('click', () => {
