@@ -132,8 +132,6 @@ $('clear').addEventListener('click', () => {
   render();
 });
 
-$('print').addEventListener('click', () => window.print());
-
 // bill counter — survives a reload
 const NEXT_KEY = 'mf.nextCount';
 const counters = $('counters');

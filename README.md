@@ -26,7 +26,8 @@ Two pages:
   for the item and the number. #007fff on the buttons;
   the only other colour is each item's own band on its row.
 - Tap the **Nos** button on a row to change it, **✕** to remove the row.
-- **Next bill →** counts the finished bill and starts an empty one.
-- **Print** gives a clean bill without the buttons.
+- **Clear** and **Next bill →** sit at the top; Next counts the finished bill
+  and starts an empty one.
+- Printing is the browser's own Share ▸ Print — the page prints clean.
 
 Items, rates and colours live at the top of `items.js`.

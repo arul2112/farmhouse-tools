@@ -22,11 +22,21 @@ body {
 .wrap { max-width: 900px; margin: 0 auto; }
 
 .head {
-  padding: 14px 12px 10px;
+  padding: 12px 12px 10px;
   border-bottom: 2px solid var(--ink);
 }
+.head-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+}
+.head-top h1 { flex: 1 1 auto; white-space: nowrap; }
+.head-actions { display: flex; gap: 8px; margin-left: auto; }
+.head-actions .btn { flex: none; padding: 9px 12px; font-size: 14px; }
 .head h1 { margin: 0; font-size: 20px; letter-spacing: -0.01em; }
-.sub { margin: 3px 0 0; color: var(--muted); font-size: 13px; }
+.sub { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+.sub .count { margin-left: 6px; }
 .sub a { margin-left: 6px; color: var(--accent); font-weight: 700; white-space: nowrap; }
 
 /* ---------- the bill ---------- */
@@ -259,13 +269,7 @@ body.locked { overflow: hidden; }
   gap: 8px;
   padding: 0 12px 12px;
 }
-.count {
-  width: 100%;
-  padding: 2px 2px 6px;
-  color: var(--muted);
-  font-size: 13px;
-  user-select: none;
-}
+.count { color: var(--muted); font-size: 13px; user-select: none; }
 .btn {
   flex: 1 1 0;
   padding: 13px 8px;
@@ -289,7 +293,7 @@ body.locked { overflow: hidden; }
 
 @media print {
   body { font-size: 12px; }
-  .sub, .note, .add, .picker, .actions, .empty { display: none; }
+  .sub, .note, .add, .picker, .actions, .empty, .head-actions { display: none; }
   .table-scroll { overflow: visible; }
   .bill { min-width: 0; }
   .bill th, .bill td { padding: 6px 8px; border-color: #000; }
