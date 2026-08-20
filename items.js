@@ -3,7 +3,7 @@ const PRODUCTS = [
   // tint — each item keeps its own colour band on the bill, like the sheet
   { id: 'rfcl',  name: 'RFCL Urea (NFL)',  unit: '45 kg',   rate: 237,  tint: '#f3f9f0' },
   { id: 'iffco', name: 'IFFCO Urea',       unit: '45 kg',   rate: 258,  tint: '#fdfbee' },
-  { id: 'dap',   name: 'DAP',              unit: '50 kg',   rate: 1298, tint: '#f2f7fc' },
+  { id: 'dap',   name: 'DAP',              unit: '50 kg',   rate: 1278, tint: '#f2f7fc' },
   { id: 'fact',  name: 'Factamfas',        unit: '50 kg',   rate: 1906, tint: '#fbf2f3' },
   { id: 'nano',  name: 'IFFCO Nano Urea',  unit: '½ litre', rate: 205,  tint: '#f6f3fb' }
 ];

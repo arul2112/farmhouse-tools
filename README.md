@@ -17,7 +17,7 @@ Two pages:
 | --- | --- | --- |
 | RFCL Urea (NFL) | ₹237 | 45 kg |
 | IFFCO Urea | ₹258 | 45 kg |
-| DAP | ₹1298 | 50 kg |
+| DAP | ₹1278 | 50 kg |
 | Factamfas | ₹1906 | 50 kg |
 | IFFCO Nano Urea | ₹205 | ½ litre |
 
