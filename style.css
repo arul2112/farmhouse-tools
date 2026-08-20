@@ -311,6 +311,9 @@ tfoot .grand td:last-child { color: var(--accent); font-size: 17px; }
     border-top: 2px solid var(--accent);
   }
   tfoot .grand td[colspan]::before { display: none; }
+
+  /* the split-up figures are noise on a phone — only the final total matters */
+  #gAmount, #gCgst, #gSgst { display: none; }
   #gTotal { grid-column: 1 / -1; font-size: 19px; }
 
   .actions { flex-wrap: wrap; }
@@ -331,4 +334,5 @@ tfoot .grand td:last-child { color: var(--accent); font-size: 17px; }
   .nos-select { display: none; }
   .nos-value { display: inline-block; }
   .selector, .sel-head { display: none; }
+  #gAmount, #gCgst, #gSgst { display: table-cell; }
 }
